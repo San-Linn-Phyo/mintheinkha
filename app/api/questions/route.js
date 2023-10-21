@@ -12,6 +12,7 @@ export async function GET(request) {
   if (keyword) {
     questions = await Question.find({ questionName: { $regex: keyword } });
   } else if (page) {
+    console.log(page);
     const limit = 9;
     questions = await Question.find({})
       .sort({ questionNo: 1 })
