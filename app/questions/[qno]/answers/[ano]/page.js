@@ -1,3 +1,5 @@
+"use client";
+
 import Header from "@/app/components/Header";
 import Link from "next/link";
 
@@ -7,11 +9,15 @@ export default async function AnswerPage({ params: { ano, qno } }) {
 
   // strings and 0 are falsy
   if (parseInt(ano) && parseInt(qno))
-    answer = await (
-      await fetch(
-        `${process.env.VERCEL_ENV.API_DOMAIN}/api/questions/${qno}/answers/${ano}`,
-      )
-    ).json();
+    try {
+      answer = await (
+        await fetch(
+          `${process.env.API_DOMAIN}/api/questions/${qno}/answers/${ano}`,
+        )
+      ).json();
+    } catch (error) {
+      console.error("Something went wrong in fetching: ", error.message);
+    }
   else error = true;
 
   return (

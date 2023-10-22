@@ -333,9 +333,13 @@ export default async function QuestionPage({ params: { qno } }) {
 
   // strings and number 0 are falsy
   if (parseInt(qno))
-    question = await (
-      await fetch(`${process.env.VERCEL_ENV.API_DOMAIN}/api/questions/${qno}`)
-    ).json();
+    try {
+      question = await (
+        await fetch(`${process.env.API_DOMAIN}/api/questions/${qno}`)
+      ).json();
+    } catch (error) {
+      console.error("Something went wrong in fetching: ", error.message);
+    }
   else error = true;
 
   return (
