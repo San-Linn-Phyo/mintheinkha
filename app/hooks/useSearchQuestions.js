@@ -18,9 +18,7 @@ export default function useSearchQuestions(keyword) {
 
   useEffect(() => {
     if (keyword && debounce)
-      fetch(
-        `${process.env.NEXT_PUBLIC_API_DOMAIN}/api/questions?keyword=${debounce}`,
-      )
+      fetch(`/api/questions?keyword=${debounce}`)
         .then((response) => response.json())
         .then((result) => {
           if (!result.length) {

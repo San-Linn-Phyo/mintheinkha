@@ -9,7 +9,7 @@ export default async function AnswerPage({ params: { ano, qno } }) {
   if (parseInt(ano) && parseInt(qno))
     answer = await (
       await fetch(
-        `${process.env.NEXT_PUBLIC_API_DOMAIN}/api/questions/${qno}/answers/${ano}`,
+        `${process.env.VERCEL_ENV.API_DOMAIN}/api/questions/${qno}/answers/${ano}`,
       )
     ).json();
   else error = true;

@@ -22,7 +22,7 @@ export default function QuestionsList() {
   const { inView, ref } = useInView();
 
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/questions?page=${page}`)
+    fetch(`/api/questions?page=${page}`)
       .then((resp) => resp.json())
       .then((data) => {
         if (!data.length) setHasMore(false);
