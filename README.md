@@ -9,3 +9,7 @@ using Nextjs (fullstack).
 https://favicon.io/favicon-converter/ (for converting the logo to favicon) <br/>
 https://www.mintheinkha.com/ (for the logo and favicon) <br/>
 https://daisyui.com/ (for styling) <br/>
+
+### Project Link
+
+https://mintheinkha.vercel.app/
