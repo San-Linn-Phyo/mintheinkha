@@ -18,7 +18,7 @@ export default function useSearchQuestions(keyword) {
 
   useEffect(() => {
     if (keyword && debounce)
-      fetch(`http://localhost:3000/api/questions?keyword=${debounce}`)
+      fetch(`/api/questions?keyword=${debounce}`)
         .then((response) => response.json())
         .then((result) => {
           if (!result.length) {

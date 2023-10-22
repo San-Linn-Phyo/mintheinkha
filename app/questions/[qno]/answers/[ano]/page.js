@@ -8,7 +8,7 @@ export default async function AnswerPage({ params: { ano, qno } }) {
   // strings and 0 are falsy
   if (parseInt(ano) && parseInt(qno))
     answer = await (
-      await fetch(`http://localhost:3000/api/questions/${qno}/answers/${ano}`)
+      await fetch(`${process.env.DOMAIN}/api/questions/${qno}/answers/${ano}`)
     ).json();
   else error = true;
 
