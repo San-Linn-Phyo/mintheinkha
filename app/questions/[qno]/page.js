@@ -334,7 +334,7 @@ export default async function QuestionPage({ params: { qno } }) {
   // strings and number 0 are falsy
   if (parseInt(qno))
     question = await (
-      await fetch(`${process.env.DOMAIN}/api/questions/${qno}`)
+      await fetch(`${process.env.NEXT_PUBLIC_API_DOMAIN}/api/questions/${qno}`)
     ).json();
   else error = true;
 
