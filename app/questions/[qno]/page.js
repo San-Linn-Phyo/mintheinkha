@@ -335,7 +335,7 @@ export default async function QuestionPage({ params: { qno } }) {
   if (parseInt(qno))
     try {
       question = await (
-        await fetch(`${process.env.API_DOMAIN}/api/questions/${qno}`)
+        await fetch(`https://mintheinkha.vercel.app/api/questions/${qno}`)
       ).json();
     } catch (error) {
       console.error("Something went wrong in fetching: ", error.message);

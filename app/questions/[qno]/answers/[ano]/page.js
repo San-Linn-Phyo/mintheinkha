@@ -12,7 +12,7 @@ export default async function AnswerPage({ params: { ano, qno } }) {
     try {
       answer = await (
         await fetch(
-          `${process.env.API_DOMAIN}/api/questions/${qno}/answers/${ano}`,
+          `https://mintheinkha.vercel.app/api/questions/${qno}/answers/${ano}`,
         )
       ).json();
     } catch (error) {

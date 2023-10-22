@@ -18,7 +18,7 @@ export default function useSearchQuestions(keyword) {
 
   useEffect(() => {
     if (keyword && debounce)
-      fetch(`/api/questions?keyword=${debounce}`)
+      fetch(`https://mintheinkha.vercel.app/api/questions?keyword=${debounce}`)
         .then((response) => response.json())
         .then((result) => {
           if (!result.length) {
